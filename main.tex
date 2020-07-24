@@ -1,0 +1,163 @@
+\documentclass[12 pt, letterpaper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{enumitem}
+
+\newenvironment{exercise}[2][Ejercicio]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{sol}
+    {\emph{Solución:}
+    }
+    
+\title{Apuntes de Matemáticas Biológicas.\\ Semestre A20.}
+\author{}
+\date{June 2020}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{3.9.1, Hillen}
+\hfill \break
+\textbf{El método de $C^{14}$.}
+El método del $C^{14}$ es usado para estimar la edad de objetos arqueológicos.
+Es sabido que seres vivos acumulan el isótopo radioactivo $C^14$ durante su tiempo de vida, hasta una concentración $c_0$.
+Cuando el organismo muere, el $C^{14}$ radioactivo decaé con una vida media de $T_{1/2} = 5760 \text{ años}$.
+
+Arqueólogos encontraron una pieza de madera en el delta del Nilo que mostraban una concentración del $75 \%$ de $c_0$.
+Estime la edad de esta pieza de madera.
+¿Pudo Tutankamón estar sentado en un bote hecho del mismo árbol del cuál provino esta pieza de madera?
+\end{exercise}
+Solución: La ecuación diferencial del decaemiento se puede expresar mediante:
+   \begin{center}
+        $\frac{dC}{dt} = -\alpha(C)$
+    \end{center}
+Esta ecuación diferencial se puede resolver por medio de separación de variables
+    \begin{center}
+        $\frac{dC}{C} = -\alpha(dt)$
+    \end{center}
+    \begin{center}
+        $\int\limits_{Ci}^{Cf} \frac{dC}{C} \cdot = -\alpha(dt)$
+    \end{center}
+    \begin{center}
+        $ln(cf)-ln(ci) = -\alpha(t) $     
+    \end{center}
+    \begin{center}
+        $ln \frac{Cf}{Ci} = -\alpha(t) $     
+    \end{center}
+
+De esta forma si Cf=1/2Ci, entonces
+
+    \begin{center}
+        $ln \frac{1/2Ci}{Ci} = -\alpha(t) $     
+    \end{center}
+    
+    \begin{center}
+        $ln1/2 = -\alpha(t) $     
+    \end{center}
+    
+     \begin{center}
+        $\alpha =-\frac{ln 1/2}{t}= 1.20x10^{-4} \text{ años}^{-1}$ 
+        , siendo t = 5760 años
+    \end{center}
+Para saber cuantos años tiene el trozo de madera, se sabe que posee Cf = 0.75 Ci, por lo tanto
+
+    \begin{center}
+        $t =-\frac{\frac{1/2Ci}{Ci}}{\alpha }= 2397.35 \text{ años}$ 
+    \end{center}
+
+\begin{exercise}{3.9.2 Hillen}
+\hfill\break
+Psicólogos interesados en aprender acerca de la teoría de aprendizaje.
+Una curva de aprendizaje es la gráfica de una función $P(t)$, el desempeño de alguien aprendiendo alguna habilidad nueva como una función del tiempo de entrenamiento $t$.
+\begin{enumerate}[label=\alph*]
+    \item  ¿Qué representa $dP/dt$?
+    
+    \item Discuta por qué la ecuación diferencial
+    \begin{center}
+        $\frac{dP}{dt} = k(M-P)$
+    \end{center}
+    donde $k$ y $M$ son constantes positivas, es un modelo razonable para el aprendizaje.
+    ¿Cuál es el significado de $k$ y de $M$?
+    ¿Cuál sería una una condición inicial razonable para el modelo?
+    Incluya una gráfica de $dP/dt$ vs $P$ como parte de la discusión.
+    
+    \item Haga un bosquejo cualitativo de las soluciones de la ecuación diferencial
+\end{enumerate}
+\end{exercise}
+\begin{sol}
+\begin{enumerate}[label=\alph*]
+    \item La ecuación diferencial $dP/dt$ representa el cambio del desempeño de alguien aprendiendo una habilidad con respecto al tiempo. Esto es, la velocidad de aprendizaje.
+    
+    \item Con respecto a la ecuación diferencial
+    \begin{center}
+        $\frac{dP}{dt} = k(M-P)$
+    \end{center}
+    la constante $k$ es la tasa de decrecimiento, mientras que $M$ es el desempeño límite.
+    
+    Una condición inicial razonable para el modelo es 
+    
+    \item 
+\end{enumerate}
+\end{sol}
+
+
+\begin{exercise}{3.9.3 Hillen}
+\hfill\break
+\textbf{Cosecha.}
+El modelo (logístico) de Verhulst para crecimiento poblacional es 
+\begin{center}
+    $\dot{x} = a u \left( 1 - \frac{u}{K} \right)$
+\end{center}
+donde $K$ denota la \textit{carrying capacity} y $a$ la tasa de reproducción.
+Asumimos que la cantidad consechada es proporcional al tamaño de la población, con constante de proporcionalidad $c$.
+Entonces el modelo es
+\begin{center}
+    $\dot{x} = a u \left( 1 - \frac{u}{K} \right) - cu$.
+\end{center}
+Grafique el campo vectorial y encuentre los estados estacionarios.
+¿Para qué valor de $c$ la población se extingue?
+Dé una explicación biológica
+\end{exercise}
+\begin{sol}
+
+\end{sol}
+
+
+
+\begin{exercise}{3.9.4 Hillen}
+\hfill\break
+\textbf{Pesca.}
+En este modelo consideraremos tres modelos simples de pesca.
+Sea $N(t)$ la población de peces a tiempo $t$.
+En ausencia de pesca, se asume que la población crece logísticamente
+\begin{center}
+    $\dot{N} = r N\left( 1-\frac{N}{K} \right)$
+\end{center}
+donde $r$ es la tasa de cecimiento intrínseca de la población, y $K>0$ es la carrying capacity de la población de peces.
+Los efectos de pesca son modelados con un término adicional en la ecuación para $N$.
+Los tres modelos son los siguientes:
+\begin{center}
+\begin{tabular}{c l}
+     \textbf{Modelo 1:} & $\dot{N} = r N\left( 1-\frac{N}{K} \right) - H_1$;  \\
+     \textbf{Modelo 2:} & $\dot{N} = r N\left( 1-\frac{N}{K} \right) - H_2 N$;\\
+     \textbf{Modelo 3:} & $\dot{N} = r N\left( 1-\frac{N}{K} \right) - H_3 \frac{N}{A+N}$,
+\end{tabular}
+\end{center}
+donde $H_1$, $H_2$,  $H_3$ y $A$ son constantes positivas.
+\begin{enumerate}[label=\alph*]
+    \item Para cada modelo, de una interpretación biológica del término de pesca.
+    ¿En que difieren?
+    ¿Cuál es el significado de las constantes $H_1,H_2,H_3$ y $A$?
+    
+    \item Critique el Modelo 1. 
+    ¿Por qué no es biológicamente realista?
+    
+    \item ¿Cuál de los Modelos 1 y 2 cree que es mejor y por qué?
+\end{enumerate}
+\end{exercise}
+
+\end{document}
